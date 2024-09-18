@@ -4,7 +4,10 @@
 
 A Tailwind CSS plugin that displays the current screen breakpoint label (e.g., ```xs```, ```sm```, ```md```, ```lg```, ```xl```, ```2xl```) in the corner of your page. This helps developers quickly identify the active breakpoint while working on responsive designs.
 
-
+<div style="display: flex; justify-content: space-between; gap: 10px;">
+  <img src="https://github.com/user-attachments/assets/5402acf4-dd09-4d06-b2d4-789330dd294d" width="45%" />
+  <img src="https://github.com/user-attachments/assets/77d8e7db-3aeb-4967-81c5-b1a8db50af44" width="45%" />
+</div>
 
 ## Installation
 
