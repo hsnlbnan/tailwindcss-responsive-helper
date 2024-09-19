@@ -1,7 +1,11 @@
 const plugin = require('tailwindcss/plugin');
 
-module.exports = plugin(function ({ addUtilities, addBase, theme, variants }) {
-  const screens = theme('screens', {});
+interface Screen {
+  [key: string]: string;
+}
+
+const tailwindPlugin = plugin(({  addBase, theme }: { addBase: any, theme: any }) => {
+  const screens = theme('screens', {}) as Screen;
   const sortedScreens = Object.entries(screens).sort(
     (a, b) => parseInt(a[1]) - parseInt(b[1])
   );
@@ -23,7 +27,7 @@ module.exports = plugin(function ({ addUtilities, addBase, theme, variants }) {
 
   addBase(baseStyles);
 
-  const mediaQueries = sortedScreens.reduce((acc, [label, size]) => {
+  const mediaQueries = sortedScreens.reduce((acc: Record<string, { 'body::before': { content: string } }>, [label, size]) => {
     acc[`@media (min-width: ${size})`] = {
       'body::before': {
         content: `"${label}"`,
@@ -43,3 +47,5 @@ module.exports = plugin(function ({ addUtilities, addBase, theme, variants }) {
     },
   });
 });
+
+export default tailwindPlugin;
