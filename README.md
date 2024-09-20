@@ -14,7 +14,7 @@ A Tailwind CSS plugin that displays the current screen breakpoint label (e.g., `
 Install the plugin via npm:
 
 ```bash
-    npm install tailwindcss-screen-indicator
+    npm install tailwindcss-responsive-helper
 ```
 Then add it to your tailwind.config.js file:
 
